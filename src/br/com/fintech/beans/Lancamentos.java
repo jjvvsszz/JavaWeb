@@ -1,18 +1,16 @@
 package br.com.fintech.beans;
 
-import java.util.Calendar;
-
 public class Lancamentos {
     private final int id_lancamento;
     private final int id_conta;
     private final double vl_lancamento;
-    private final Calendar dt_data;
+    private final String nr_cpf;
 
-    public Lancamentos(int id_lancamento, int id_conta, double vl_lancamento, Calendar dt_data) {
+    public Lancamentos(int id_lancamento, int id_conta, double vl_lancamento, String nr_cpf) {
         this.id_lancamento = id_lancamento;
         this.id_conta = id_conta;
         this.vl_lancamento = vl_lancamento;
-        this.dt_data = dt_data;
+        this.nr_cpf = nr_cpf;
     }
 
     public int getId_lancamento() {
@@ -27,7 +25,7 @@ public class Lancamentos {
         return vl_lancamento;
     }
 
-    public Calendar getDt_data() {
-        return dt_data;
+    public String getNr_cpf() {
+        return nr_cpf;
     }
 }

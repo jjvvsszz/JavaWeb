@@ -14,7 +14,7 @@ public class UserDao {
 
     public boolean cpfExistente(String nr_cpf) {
         PreparedStatement stmt = null;
-        ResultSet rs = null;
+        ResultSet rs;
         int result;
         boolean existeste = true;
         try {
@@ -42,7 +42,7 @@ public class UserDao {
 
     public boolean emailExistente(String nm_email) {
         PreparedStatement stmt = null;
-        ResultSet rs = null;
+        ResultSet rs;
         int result;
         boolean existeste = true;
         try {
@@ -104,11 +104,11 @@ public class UserDao {
         try {
             conexao = FiapOracle.obterconexao();
 
-            stmt = conexao.prepareStatement("DELETE FROM T_FIN_USER WHERE ?");
+            stmt = conexao.prepareStatement("DELETE FROM T_FIN_USER WHERE NR_CPF = ?");
             stmt.setString(1,user.getNr_cpf());
             stmt.executeQuery();
 
-            stmt = conexao.prepareStatement("DELETE FROM T_FIN_AUTH WHERE ?");
+            stmt = conexao.prepareStatement("DELETE FROM T_FIN_AUTH WHERE NR_CPF = ?");
             stmt.setString(1,user.getNr_cpf());
             stmt.executeQuery();
         } catch(SQLException e) {

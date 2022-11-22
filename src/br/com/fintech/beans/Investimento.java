@@ -1,20 +1,18 @@
 package br.com.fintech.beans;
 
-import java.util.Calendar;
-
 public class Investimento {
     private final int id_investimento;
     private final int id_conta;
     private final double vl_investimento;
     private double vl_variacao;
-    private final Calendar dt_data;
+    private final String nr_cpf;
 
-    public Investimento(int id_investimento, int id_conta, double vl_investimento, double vl_variacao, Calendar dt_data) {
+    public Investimento(int id_investimento, int id_conta, double vl_investimento, String nr_cpf) {
         this.id_investimento = id_investimento;
         this.id_conta = id_conta;
         this.vl_investimento = vl_investimento;
-        this.vl_variacao = vl_variacao;
-        this.dt_data = dt_data;
+        this.nr_cpf = nr_cpf;
+        this.vl_variacao = 0;
     }
 
     public double getVl_variacao() {
@@ -37,7 +35,7 @@ public class Investimento {
         return vl_investimento;
     }
 
-    public Calendar getDt_data() {
-        return dt_data;
+    public String getNr_cpf() {
+        return nr_cpf;
     }
 }
